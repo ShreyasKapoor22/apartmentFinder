@@ -9,20 +9,16 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <html>
 <head>
-    <title>Apartment List</title>
-    <link href="<c:url value="/resources/css/style.css" />" rel="stylesheet">
+    <title>Title</title>
+    <link href="<c:url value="../resources/css/style.css" />"
+          rel="stylesheet">
+    <script src="<c:url value="../resources/js/jquery-1.11.1.min.js" />"></script>
 </head>
 <body>
 <div class="container">
     <div class="col-md-offset-1 col-md-10">
         <h2>List of Apartments</h2>
         <hr />
-        <div>
-            <p>Welcome ${userData.name}</p>
-        </div>
-        <div class="form-group form-more-space">
-            <a class="btn btn-danger" href="/apartmentfinder/user/editProfile/${userData.userId}">Edit Profile</a>
-        </div>
 
         <div class="panel panel-info">
             <div class="panel-heading">
