@@ -14,7 +14,7 @@
 		<link href="../resources/css/fonts/font-awesome.min.css" rel="stylesheet" type="text/css">
 
 		<!-- Loading main css file -->
-		<link rel="stylesheet" href="../resources/css/style.css">
+		<link rel="stylesheet" href="/resources/css/style.css">
 
 	</head>
 

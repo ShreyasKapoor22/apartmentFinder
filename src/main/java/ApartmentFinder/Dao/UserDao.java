@@ -8,7 +8,13 @@ public interface UserDao {
 
     void addUser(User u);
 
-    boolean validateUser(String userName, String password);
+    User validateUser(String userName, String password);
+
+    boolean ifUserNameExists(String userName);
+
+    User getUserDetails(int userId);
+
+    void updateUserDetails(User user);
 
 
 
