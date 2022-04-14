@@ -19,6 +19,12 @@
     <div class="col-md-offset-1 col-md-10">
         <h2>List of Apartments</h2>
         <hr />
+        <div>
+            <p>Welcome ${userData.name}</p>
+        </div>
+        <div class="form-group form-more-space">
+            <a class="btn btn-danger" href="/apartmentfinder/user/editProfile/${userData.userId}">Edit Profile</a>
+        </div>
 
         <div class="panel panel-info">
             <div class="panel-heading">
