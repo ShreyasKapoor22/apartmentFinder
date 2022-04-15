@@ -1,7 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@page isELIgnored="false" %>
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+
 <html lang="en">
 	<head>
 		<meta charset="UTF-8">
@@ -12,99 +13,32 @@
 
 		<!-- Loading third party fonts -->
 		<link href="http://fonts.googleapis.com/css?family=Roboto:300,400,700|" rel="stylesheet" type="text/css">
-		<link href="../resources/css/fonts/font-awesome.min.css" rel="stylesheet" type="text/css">
+		<link href="<c:url value="/resources/css/fonts/font-awesome.min.css" />" rel="stylesheet" type="text/css">
 
 		<!-- Loading main css file -->
-		<link href="<c:url value="/resources/css/style.css" />" rel="stylesheet">
+		<link href="<c:url value="/resources/css/styles1.css" />" rel="stylesheet">
 
 	</head>
 
 
 	<body>
-
-
-		<div id="site-content">
-			<header class="site-header">
-				<div class="container">
-					<a href="index.html" id="branding">
-						<img src="../resources/css/images/logo.png" alt="" class="logo">
-					</a> <!-- #branding -->
-
-
-					<div class="mobile-navigation"></div>
+	<div align="center">
+		<br><br><br>
+		<font face="Optima" size="10px">Boulder Apartments</font><br>
+		<img src="<c:url value="/resources/css/images/logo.png" />" alt="Boulder Apartments Logo" style="width:500px;height:180px;">
+	</div>
+	<br><br><br>
+	<div align="center">
+		<form action="/login" method="post" class="form-inline">
+			<font face="Arial" size="6px">Login or Create an Account<br><br><br>
+				<div class="form-group form-more-space">
+					<button type="submit" formaction="/apartmentfinder/user/login" class="button">Login</button><br><br>
+					<button type="submit" formaction="/apartmentfinder/user/register" class="button">Create Account</button>
 				</div>
-			</header>
-			<main class="main-content">
-				<div class="container">
-					<div class="page">
-						<div class="content">
-							<div class="row" id="content">
+			</font>
+		</form>
 
-						<div class="medium-8 columns">
-						<div class="left large-10 columns">
-
-						<div class="col" style="margin-right:25%">
-						     <div class="well">
-						       <form action="/login" method="post" class="form-inline">
-						         <p>Log in or create an account.</p>
-<%--						         <div class="form-group form-space">--%>
-<%--						           <input id="username" name="username" type="text" placeholder="Username"  class="form-control">--%>
-<%--						         </div>--%>
-<%--										 <br>--%>
-<%--						         <div class="form-group form-space">--%>
-<%--						           <input id="password" name="password" type="password" placeholder="Password"  class="form-control">--%>
-<%--						         </div>--%>
-<%--										 <br>--%>
-						         <div class="form-group form-more-space">
-						           <button id="log-in-btn" type="submit" formaction="/apartmentfinder/user/login" class="btn btn-default">Login</button>
-						           <button id="new-account-btn" type="submit" formaction="/apartmentfinder/user/register" class="btn btn-default">Create Account</button>
-						         </div>
-						       </form>
-						     </div>
-						   </div>
-						 </div>
-						 </div>
-							</div>
-						</div>
-					</div>
-
-				</div> <!-- .container -->
-			</main>
-			<footer class="site-footer">
-				<div class="container">
-					<div class="row">
-
-
-
-
-					</div> <!-- .row -->
-
-					<div class="row">
-							<br>
-							<br>
-							<br>
-							<br>
-							<br>
-							<br>
-						</div>
-						<div class="row">
-								<br>
-								<br>
-								<br>
-								<br>
-
-							</div>
-				</div> <!-- .container -->
-
-			</footer>
-		</div>
-		<!-- Default snippet for navigation -->
-
-
-
-		<script src="../resources/js/jquery-1.11.1.min.js"></script>
-		<script src="../resources/js/plugins.js"></script>
-		<script src="../resources/js/app.js"></script>
+	</div>
 
 	</body>
 
