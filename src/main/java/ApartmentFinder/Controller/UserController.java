@@ -26,6 +26,16 @@ public class UserController {
     @Autowired
     private UserService userService;
 
+    public boolean isLoggedIn() {
+        return loggedIn;
+    }
+
+    public void setLoggedIn(boolean loggedIn) {
+        UserController.loggedIn = loggedIn;
+    }
+
+    private static boolean loggedIn = false;
+
 
 
     @PostMapping("/register")
@@ -55,6 +65,7 @@ public class UserController {
 
             userService.addUser(user);
             request.getSession().setAttribute("userData", user);
+            setLoggedIn(true);
 
             return "redirect:/apartment/list";
         }else{
@@ -62,13 +73,13 @@ public class UserController {
         }
     }
 
-    @PostMapping("/login")
+    @RequestMapping("/login")
     public String login()
     {
         return "login";
     }
 
-    @PostMapping("/loginUser")
+    @RequestMapping("/loginUser")
     private String loginUser(HttpServletRequest request, Model theModel){
 
         System.out.println("Inside login user");
@@ -80,6 +91,7 @@ public class UserController {
         if(user.getUserName() != null){
             System.out.println("User name is ="+ user.getName());
             request.getSession().setAttribute("userData", user);
+            setLoggedIn(true);
             return "redirect:/apartment/list";
         }else{
             User newUser = new User();
@@ -97,35 +109,44 @@ public class UserController {
     @RequestMapping("/editProfile/{userId}")
     public String editProfile(@PathVariable("userId") int userId, Model model)
     {
-        System.out.println("Inside edit profile");
-        System.out.println("UserId = "+ userId);
-        User userDetails = userService.getUserDetails(userId);
-        model.addAttribute("userDetails", userDetails);
+        if(isLoggedIn()){
+            System.out.println("Inside edit profile");
+            System.out.println("UserId = "+ userId);
+            User userDetails = userService.getUserDetails(userId);
+            model.addAttribute("userDetails", userDetails);
 
-        return "edit-profile";
+            return "edit-profile";
+        }else{
+            return "login";
+        }
+
     }
 
     @PostMapping("/updateUserDetails")
     private String updateDetails(HttpServletRequest request) {
-        System.out.println("Inside update Details");
-        String firstName = request.getParameter("name");
-        String password = request.getParameter("password");
-        String email = request.getParameter("emailAddress");
-        String userName = request.getParameter("userName");
-        String contactNo = request.getParameter("contactNo");
-        String userId = request.getParameter("userId");
-        User user = new User();
-        user.setUserId(Integer.parseInt(userId));
-        user.setName(firstName);
-        user.setUsername(userName);
-        user.setContactNo(contactNo);
-        user.setPassword(password);
-        user.setEmailAddress(email);
+        if(isLoggedIn()){
+            System.out.println("Inside update Details");
+            String firstName = request.getParameter("name");
+            String password = request.getParameter("password");
+            String email = request.getParameter("emailAddress");
+            String userName = request.getParameter("userName");
+            String contactNo = request.getParameter("contactNo");
+            String userId = request.getParameter("userId");
+            User user = new User();
+            user.setUserId(Integer.parseInt(userId));
+            user.setName(firstName);
+            user.setUsername(userName);
+            user.setContactNo(contactNo);
+            user.setPassword(password);
+            user.setEmailAddress(email);
 
-        userService.addUser(user);
+            userService.addUser(user);
 
-        request.getSession().setAttribute("userData", user);
-        return "redirect:/apartment/list";
+            request.getSession().setAttribute("userData", user);
+            return "redirect:/apartment/list";
+        }else{
+            return "login";
+        }
 
     }
 

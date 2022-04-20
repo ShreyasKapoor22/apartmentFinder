@@ -22,8 +22,11 @@
         <div>
             <p>Welcome ${userData.name}</p>
         </div>
-        <div class="form-group form-more-space">
+        <div>
             <a class="btn btn-danger" href="/apartmentfinder/user/editProfile/${userData.userId}">Edit Profile</a>
+        </div>
+        <div>
+            <a class="btn btn-danger" href="/apartmentfinder/appointment/manage/${userData.userId}">Manage appointments</a>
         </div>
 
         <div class="panel panel-info">
@@ -40,6 +43,7 @@
                         <th>Address</th>
                         <th>Area</th>
                         <th>Images</th>
+                        <th>Rating</th>
                     </tr>
 
                     <!-- loop over and print our customers -->
@@ -53,9 +57,10 @@
                             <td>${apartment.address}</td>
                             <td>${apartment.area}</td>
                             <td>${apartment.images}</td>
+                            <td>${apartment.rating}/5</td>
 
                             <td>
-                                <!-- display the update link --> <a href="">Book an Appointment</a>
+                                <a type="submit" href="/apartmentfinder/appointment/${apartment.apartmentId}/${userData.userId}" class="button">Book and appointment</a>
                             </td>
 
                         </tr>

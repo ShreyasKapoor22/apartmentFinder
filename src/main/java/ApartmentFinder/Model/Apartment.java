@@ -27,6 +27,28 @@ public class Apartment {
     @Column(name = "address")
     private String address;
 
+    public double getRating() {
+        return rating;
+    }
+
+    public void setRating(double rating) {
+        this.rating = rating;
+    }
+
+    @Column(name = "rating", columnDefinition = "default 0.0")
+    private double rating;
+
+    public int getNoOfReviews() {
+        return noOfReviews;
+    }
+
+    public void setNoOfReviews(int noOfReviews) {
+        this.noOfReviews = noOfReviews;
+    }
+
+    @Column(name="noOfReviews", columnDefinition = "default 0")
+    private int noOfReviews;
+
     public int getApartmentId() {
         return apartmentId;
     }
