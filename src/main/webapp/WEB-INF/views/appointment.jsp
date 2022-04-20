@@ -15,7 +15,6 @@
 <head>
     <title>Login</title>
     <link href="<c:url value="/resources/css/style.css" />" rel="stylesheet">
-    <script src="<c:url value="/resources/js/jquery-1.11.1.min.js" />"></script>
 </head>
 
 <body>

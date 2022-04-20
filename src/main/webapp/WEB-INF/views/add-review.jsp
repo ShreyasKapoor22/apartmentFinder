@@ -13,7 +13,6 @@
         <title>Add review</title>
         <link href="<c:url value="/resources/css/style.css" />" rel="stylesheet">
         <link href="<c:url value="/resources/css/bootstrap.min.css" />" rel="stylesheet">
-        <script src="<c:url value="/resources/js/jquery-1.11.1.min.js" />"></script>
     </head>
 </head>
 <body>
