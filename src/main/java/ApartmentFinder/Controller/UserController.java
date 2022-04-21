@@ -38,7 +38,7 @@ public class UserController {
 
 
 
-    @PostMapping("/register")
+    @RequestMapping("/register")
     public String showFormForAdd(Model theModel) {
         User user = new User();
         theModel.addAttribute("user", user);
@@ -46,7 +46,7 @@ public class UserController {
     }
 
 
-    @PostMapping("/addUser")
+    @RequestMapping("/addUser")
     private String addUser(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
         System.out.println("Inside add user");
         String firstName = request.getParameter("name");
@@ -122,7 +122,7 @@ public class UserController {
 
     }
 
-    @PostMapping("/updateUserDetails")
+    @RequestMapping("/updateUserDetails")
     private String updateDetails(HttpServletRequest request) {
         if(isLoggedIn()){
             System.out.println("Inside update Details");
