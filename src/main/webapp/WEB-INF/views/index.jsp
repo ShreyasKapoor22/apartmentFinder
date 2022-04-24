@@ -15,7 +15,7 @@
 		<link href="../resources/css/fonts/font-awesome.min.css" rel="stylesheet" type="text/css">
 
 		<!-- Loading main css file -->
-		<link href="<c:url value="/resources/css/style.css" />" rel="stylesheet">
+		<link href="<c:url value="/resources/css/styles.css" />" rel="stylesheet">
 
 	</head>
 

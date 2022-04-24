@@ -14,7 +14,7 @@
 <html>
 <head>
     <title>Login</title>
-    <link href="<c:url value="/resources/css/style.css" />" rel="stylesheet">
+    <link href="<c:url value="/resources/css/old_style.css" />" rel="stylesheet">
 </head>
 
 <body>

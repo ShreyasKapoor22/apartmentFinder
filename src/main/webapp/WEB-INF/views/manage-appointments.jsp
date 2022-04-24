@@ -10,7 +10,7 @@
 <html>
 <head>
     <title>Apartment List</title>
-    <link href="<c:url value="/resources/css/style.css" />" rel="stylesheet">
+    <link href="<c:url value="/resources/css/old_style.css" />" rel="stylesheet">
 </head>
 <body>
 <div class="container">
