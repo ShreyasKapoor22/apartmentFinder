@@ -24,7 +24,7 @@ public class UserDAOImpl implements UserDao{
 	public void addUser(User u) {
 		Session session = this.sessionFactory.getCurrentSession();
 		session.saveOrUpdate(u);
-		logger.info("User saved successfully, User Details="+u);
+		System.out.println("User saved successfully, User Details="+u);
 	}
 
 	public User validateUser(String userName, String password){
