@@ -1,10 +1,3 @@
-<%--
-  Created by IntelliJ IDEA.
-  User: shreyaskapoor
-  Date: 4/18/22
-  Time: 12:19 PM
-  To change this template use File | Settings | File Templates.
---%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
          pageEncoding="ISO-8859-1"%>
 <%@ taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
@@ -13,38 +6,39 @@
 
 <html>
 <head>
-    <title>Login</title>
-    <link href="<c:url value="/resources/css/old_style.css" />" rel="stylesheet">
+    <meta charset="ISO-8859-1">
+    <title>Apartment Finder | Appointment Success</title>
+    <link href="<c:url value="/resources/css/styles.css" />" rel="stylesheet">
 </head>
 
 <body>
-<div class="container">
-    <h1>Book and appointment</h1>
-    <div>
-        <p>Welcome ${userDetails.name}</p>
+    <div class="container">
+        <h1>Book and appointment</h1>
+        <div>
+            <p>Welcome ${userDetails.name}</p>
+        </div>
+        <div>
+            <p>Book appointment for  ${apartmentDetails.name}</p>
+        </div>
+
+        <form:form name="appointmentForm" cssClass="form-horizontal" method="post" action="/apartmentfinder/appointment/book/${apartmentDetails.apartmentId}/${userDetails.userId}">
+
+            Date: <input class="fa fa-calendar" type="date" id ="appointmentDate" placeholder="MM/DD/YYYY" name="appointmentDate"/> <br/>
+            Time: <select name="appointmentTime" id="appointmentTime">
+            <option value ="08:00-10:00">08:00-10:00</option>
+            <option value ="10:00-12:00">10:00-12:00</option>
+            <option value ="10:00-12:00">10:00-12:00</option>
+            <option value ="15:00-17:00">15:00-17:00</option>
+            <option value ="17:00-19:00">17:00-19:00</option>
+            <option value ="19:00-21:00">19:00-21:00</option>
+        </select>
+
+            <input class="btn btn-success" type="submit" value="Submit" />
+
+
+        </form:form>
+
     </div>
-    <div>
-        <p>Book appointment for  ${apartmentDetails.name}</p>
-    </div>
-
-    <form:form name="appointmentForm" cssClass="form-horizontal" method="post" action="/apartmentfinder/appointment/book/${apartmentDetails.apartmentId}/${userDetails.userId}">
-
-        Date: <input class="fa fa-calendar" type="date" id ="appointmentDate" placeholder="MM/DD/YYYY" name="appointmentDate"/> <br/>
-        Time: <select name="appointmentTime" id="appointmentTime">
-        <option value ="08:00-10:00">08:00-10:00</option>
-        <option value ="10:00-12:00">10:00-12:00</option>
-        <option value ="10:00-12:00">10:00-12:00</option>
-        <option value ="15:00-17:00">15:00-17:00</option>
-        <option value ="17:00-19:00">17:00-19:00</option>
-        <option value ="19:00-21:00">19:00-21:00</option>
-    </select>
-
-        <input class="btn btn-success" type="submit" value="Submit" />
-
-
-    </form:form>
-
-</div>
 
 </body>
 

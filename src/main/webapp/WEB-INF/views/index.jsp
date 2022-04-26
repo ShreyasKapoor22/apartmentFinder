@@ -31,8 +31,7 @@
 		<font face="Arial" size="6px">Login or Create an Account<br><br><br>
 			<div class="form-group form-more-space">
 				<a type="submit" href="/apartmentfinder/user/login" class="button">Login</a>
-				<br>
-				<br>
+				<br><br>
 				<a type="submit" href="/apartmentfinder/user/register" class="button">Create Account</a>
 
 			</div>
