@@ -4,14 +4,30 @@
     <meta charset="ISO-8859-1">
     <title>Apartment Finder | Appointment Success</title>
     <link href="<c:url value="/resources/css/styles.css" />" rel="stylesheet">
-</head>
 
 </head>
+
+
 <body>
+<div align="center">
+    <br>
+    <font face="Optima" size="4px">Boulder Apartments</font><br>
+    <!--<img src="<c:url value="/resources/css/images/logo.png" />" alt="Boulder Apartments Logo" style="width:100px;height:100px;">-->
+   <!-- <img src="<c:url value="/resources/css/images/logo.png" />" alt="Boulder Apartments Logo" width="150px" height="150px"/>-->
+    <hr/>
+
+</div>
+    <hr/>
+    <div align="left">
+        <a class="btn btn-danger" href="/apartmentfinder/appointment/manage/${userData.userId}">Manage appointments</a>
+    </div>
     <div class="container" align="center">
+<br/><br/><br/><br/>
         <div class="row col-md-10 col-md-offset-3">
             <div class="card card-body">
-                <h1>Appointment Successfully booked</h1>
+                <h1>Your Appointment is Successfully booked</h1>
+                <br/>
+                <h4>Thank you </h4>
             </div>
         </div>
     </div>

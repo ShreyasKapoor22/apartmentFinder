@@ -14,12 +14,20 @@
     <link href="<c:url value="/resources/css/styles.css" />" rel="stylesheet">
 </head>
 <body>
+<div align="center">
+<br>
+<font face="Optima" size="4px">Boulder Apartments</font><br>
+<img src="<c:url value="/resources/css/images/logo.png" />" alt="Boulder Apartments Logo" style="width:100px;height:100px;">
+    <hr/>
+</div>
     <div class="container">
         <div class="col-md-offset-1 col-md-10">
-            <h2>List of Apartments</h2>
+            <h3 align="center" >List of Apartments</h3>
             <hr />
             <div>
-                <p>Welcome ${userData.name}</p>
+                <font face="Arial" size="3px">
+                    <p>Welcome ${userData.name}</p>
+                </font>
             </div>
             <div>
                 <a class="btn btn-danger" href="/apartmentfinder/user/editProfile/${userData.userId}">Edit Profile</a>
@@ -59,7 +67,8 @@
                                 <td>${apartment.rating}/5</td>
 
                                 <td>
-                                    <a type="submit" href="/apartmentfinder/appointment/${apartment.apartmentId}/${userData.userId}" class="button">Book and appointment</a>
+                                    <a type="submit" href="/apartmentfinder/appointment/${apartment.apartmentId}/${userData.userId}" class="button">Book an appointment</a>
+
                                 </td>
 
                             </tr>
