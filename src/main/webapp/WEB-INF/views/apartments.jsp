@@ -17,7 +17,7 @@
 <div align="center">
 <br>
 <font face="Optima" size="4px">Boulder Apartments</font><br>
-<img src="<c:url value="/resources/css/images/logo.png" />" alt="Boulder Apartments Logo" style="width:100px;height:100px;">
+<img src="<c:url value="/resources/css/images/logo.png" />" alt="Boulder Apartments Logo" style="width:300px;height:150px;">
     <hr/>
 </div>
     <div class="container">
@@ -41,7 +41,7 @@
                     <div class="panel-title">Apartment List</div>
                 </div>
                 <div class="panel-body">
-                    <table class="table table-striped table-bordered">
+                    <table class="table">
                         <tr>
                             <th>Name</th>
                             <th>Rent</th>
@@ -63,7 +63,7 @@
                                 <td>${apartment.bathroom}</td>
                                 <td>${apartment.address}</td>
                                 <td>${apartment.area}</td>
-                                <td>${apartment.images}</td>
+                                <td><img src="${apartment.images}" height="300px"></td>
                                 <td>${apartment.rating}/5</td>
 
                                 <td>
