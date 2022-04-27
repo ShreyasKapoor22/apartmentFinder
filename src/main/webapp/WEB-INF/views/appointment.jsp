@@ -12,18 +12,42 @@
 </head>
 
 <body>
-    <div class="container">
-        <h1>Book and appointment</h1>
-        <div>
+    <div>
+        <font face="Arial" size="5px">
             <p>Welcome ${userDetails.name}</p>
+        </font>
+        <font face="Arial" size="3px">
+
+            <a class="btn btn-danger" href="/apartmentfinder/appointment/manage/${userData.userId}">Manage appointments</a>
+        </font>
+    </div>
+
+    <div class="container" align="center">
+        <h1>Book your appointments</h1>
+        <hr/>
+        <!--<div>
+            <font face="Arial" size="5px">
+                <p>Welcome ${userDetails.name}</p>
+            </font>
+        </div>-->
+        <div align="center">
+            <br><br><br>
+            <font face="Optima" size="10px">Boulder Apartments</font><br>
+            <img src="<c:url value="/resources/css/images/logo.png" />" alt="Boulder Apartments Logo" style="width:500px;height:180px;">
         </div>
+
         <div>
+            <font face="Arial" size="5px">
             <p>Book appointment for  ${apartmentDetails.name}</p>
+            </font>
         </div>
 
         <form:form name="appointmentForm" cssClass="form-horizontal" method="post" action="/apartmentfinder/appointment/book/${apartmentDetails.apartmentId}/${userDetails.userId}">
-
-            Date: <input class="fa fa-calendar" type="date" id ="appointmentDate" placeholder="MM/DD/YYYY" name="appointmentDate"/> <br/>
+        <div class="col-md-7">
+            Date: <input class="fa fa-calendar" type="date" id ="appointmentDate" placeholder="MM/DD/YYYY" name="appointmentDate"/>
+        </div>
+        <br/>
+            <div class="col-md-7">
             Time: <select name="appointmentTime" id="appointmentTime">
             <option value ="08:00-10:00">08:00-10:00</option>
             <option value ="10:00-12:00">10:00-12:00</option>
@@ -32,8 +56,13 @@
             <option value ="17:00-19:00">17:00-19:00</option>
             <option value ="19:00-21:00">19:00-21:00</option>
         </select>
+        </div>
+            <br>
+            <br>
+            <input class="button" type="submit" value="submit" />
 
-            <input class="btn btn-success" type="submit" value="Submit" />
+
+            <!--<input class="btn btn-success" type="submit" value="Submit" />-->
 
 
         </form:form>
