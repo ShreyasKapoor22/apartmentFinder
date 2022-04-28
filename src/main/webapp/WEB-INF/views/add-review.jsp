@@ -19,12 +19,12 @@
         <h1>Give your review for ${apartmentDetails.name}</h1>
 
         <form name="loginForm" method="post" action="/apartmentfinder/review/add/${apartmentDetails.apartmentId}/${userDetails.userId}">
-           <!-- Review: <input type="text" name="review" class="col-15"/>-->
-            <textarea rows = "5" cols = "60" name = "description">
-            Give your review...
-         </textarea>
-            <br/>
-            <br/>
+           Review: <input type="text" name="review" style="width:300px;height:150px;"/>
+<%--            <textarea rows = "5" cols = "60" name = "review">--%>
+<%--         </textarea>--%>
+<%--            <br/>--%>
+<%--            <br/>--%>
+            <br />
             <input class="button" type="submit" value="submit" />
            <!-- <input type="submit" value="Submit" />-->
         </form>
