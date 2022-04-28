@@ -37,6 +37,9 @@ public class ReviewController {
     String PRECISION = "%.1f";
 
 
+    /***
+     * Function to show review page.
+     */
     @RequestMapping("/addReview/{apartmentId}/{userId}")
     public String showReviewPage(@PathVariable("userId") int userId, @PathVariable("apartmentId") int apartmentId, Model model) {
         if(userController.isLoggedIn()){
@@ -56,6 +59,9 @@ public class ReviewController {
         }
     }
 
+    /***
+     * Function to add the review submitted by the user
+     */
     @RequestMapping("/add/{apartmentId}/{userId}")
     public String addReview(@PathVariable("userId") int userId, @PathVariable("apartmentId") int apartmentId, Model model, HttpServletRequest request) {
         if(userController.isLoggedIn()){
@@ -88,6 +94,9 @@ public class ReviewController {
 
     }
 
+    /***
+     * Helper function to update the rating and review.
+     */
     private double updateDetailsAboutRating(double oldRating, int noOfReviews, double rating){
         double newRating = ((oldRating*noOfReviews) + rating)/(noOfReviews+1);
         newRating = Double.parseDouble(String.format(PRECISION, newRating));

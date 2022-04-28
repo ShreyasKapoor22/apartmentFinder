@@ -37,7 +37,9 @@ public class UserController {
     private static boolean loggedIn = false;
 
 
-
+    /***
+     * Function to show the register page
+     */
     @RequestMapping("/register")
     public String showFormForAdd(Model theModel) {
         User user = new User();
@@ -45,7 +47,9 @@ public class UserController {
         return "register";
     }
 
-
+    /***
+     * Function to add user into the databse
+     */
     @RequestMapping("/addUser")
     private String addUser(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
         System.out.println("Inside add user");
@@ -73,12 +77,19 @@ public class UserController {
         }
     }
 
+    /***
+     * Function to show login page
+     */
     @RequestMapping("/login")
     public String login()
     {
         return "login";
     }
 
+
+    /***
+     * Function to login the user. If the credentials are not found, the user is redirected to the register page
+     */
     @RequestMapping("/loginUser")
     private String loginUser(HttpServletRequest request, Model theModel){
 
@@ -106,6 +117,9 @@ public class UserController {
 
     }
 
+    /***
+     * Function to edit the details of the user
+     */
     @RequestMapping("/editProfile/{userId}")
     public String editProfile(@PathVariable("userId") int userId, Model model)
     {

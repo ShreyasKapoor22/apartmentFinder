@@ -1,12 +1,8 @@
 package ApartmentFinder.Dao;
 
 import ApartmentFinder.Model.Apartment;
-import ApartmentFinder.Model.ReviewAndRating;
-import ApartmentFinder.Model.User;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
@@ -17,8 +13,6 @@ import java.util.List;
 
 @Repository
 public class ApartmentDaoImpl implements  ApartmentDao {
-
-    private static final Logger logger = LoggerFactory.getLogger(UserDAOImpl.class);
 
     @Autowired
     private SessionFactory sessionFactory;
