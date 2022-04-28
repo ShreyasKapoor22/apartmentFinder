@@ -36,7 +36,9 @@ public class AppointmentController {
     ManageAppointment manageAppointment = new ManageAppointment();
 
 
-
+    /***
+     * Function to get the appointment page. if the user is not logged in, it redirect ot login page
+     */
     @RequestMapping("/{apartmentId}/{userId}")
     public String getAppointmentPage(@PathVariable("userId") int userId, @PathVariable("apartmentId") int apartmentId, Model model) {
         if(userController.isLoggedIn()){
@@ -55,6 +57,9 @@ public class AppointmentController {
 
     }
 
+    /***
+     * Function to book an appointment
+     */
     @RequestMapping("/book/{apartmentId}/{userId}")
     public String bookAppointment(@PathVariable("userId") int userId, @PathVariable("apartmentId") int apartmentId, Model model, HttpServletRequest request) {
         if(userController.isLoggedIn()){
@@ -76,6 +81,9 @@ public class AppointmentController {
 
     }
 
+    /***
+     * Function to show the manage appointment page. this page shows the list of appointments made by the user
+     */
     @RequestMapping("/manage/{userId}")
     public String manageAppointments(@PathVariable("userId") int userId,  Model model) {
         if(userController.isLoggedIn()){
@@ -96,6 +104,9 @@ public class AppointmentController {
 
     }
 
+    /***
+     * Function to canel the appointment previously booked by user
+     */
     @RequestMapping("/cancel/{appointmentId}/{userId}")
     public String cancelAppointments(@PathVariable("appointmentId") int appointmentId, @PathVariable("userId") int userId,  Model model) {
         if(userController.isLoggedIn()){
@@ -112,6 +123,9 @@ public class AppointmentController {
 
     }
 
+    /***
+     * Helper function to get apartmentId and store into a collection of integers. the collection is used to query the apartments
+     */
     private Collection<Integer> getApartmentIdsList(List<Appointment> appointmentDetails){
         Collection<Integer> apartmentIds = new ArrayList<>();
         for(Appointment appointment : appointmentDetails){

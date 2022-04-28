@@ -22,6 +22,9 @@ public class ApartmentController {
     UserController userController = new UserController();
 
 
+    /***
+     * Function to show the list of all the apartments
+     */
     @RequestMapping("/list")
     public String showApartmentList( Model theModel, HttpServletRequest request) {
         if(userController.isLoggedIn()){

@@ -1,0 +1,74 @@
+CREATE TABLE `User_tbl` (
+  `userId` int(11) NOT NULL AUTO_INCREMENT,
+  `name` varchar(100) NOT NULL,
+  `password` varchar(100) DEFAULT NULL,
+  `username` varchar(100) NOT NULL,
+  `emailAddress` varchar(100) DEFAULT NULL,
+  `contactNo` varchar(100) DEFAULT NULL,
+  PRIMARY KEY (`userId`),
+UNIQUE ('username')
+) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8;
+
+
+CREATE TABLE `Apartment` (
+  `apartmentId` int(11) NOT NULL AUTO_INCREMENT,
+  `name` varchar(100) NOT NULL,
+  `rent` varchar(100) DEFAULT NULL,
+  `bedroom` varchar(100) NOT NULL,
+  `bathroom` varchar(100) DEFAULT NULL,
+  `area` varchar(100) DEFAULT NULL,
+  `address` varchar(100) DEFAULT NULL,
+  `images` varchar(1000) DEFAULT NULL,
+  `rating` double(2,1) DEFAULT 0.0,
+  `noOfReviews` int(11) DEFAULT 0,
+  PRIMARY KEY (`apartmentId`)
+) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8;
+
+INSERT INTO Apartment
+VALUES(1, "apartment1", "$1500/mo", "1", "1", "1000sqft", "addressno1", "https://ap.rdcpix.com/0e781dc4137bebca29fa5064cd529133l-m109581160s-w932_h420_q75.jpg", 0.0,0);
+
+INSERT INTO Apartment
+VALUES(2, "apartment2", "$1800/mo", "2", "1", "1200sqft", "addressno2", "https://ap.rdcpix.com/0e781dc4137bebca29fa5064cd529133l-m109581160s-w932_h420_q75.jpg",0.0,0);
+
+SELECT * FROM Apartment;
+SELECT * FROM User_tbl;
+
+DROP Table Apartment;
+
+
+SELECT * FROM Appointment;
+
+truncate table Apartment;
+
+INSERT INTO Apartment
+VALUES(1, "Gorgeous Remodel", "$3,675/mo", "3", "2", "800sqft", "1837 22nd Street, Boulder, CO 80302", "https://ap.rdcpix.com/0e781dc4137bebca29fa5064cd529133l-m109581160s-w932_h420_q75.jpg", 4.5,10);
+
+INSERT INTO Apartment
+VALUES(2, "Wimbledon Condominiums", "$2190/mo", "2", "1", "1100sqft", "3009-3161 Madison Ave., Boulder, CO 80303", "
+https://www.aveliving.com/AVE/media/Property_Images/Florham%20Park/hero/flor-apt-living-(2)-hero.jpg?ext=.jpg",4.0,9);
+
+INSERT INTO Apartment
+VALUES(3, "2121 Canyon Apartments", "$1790/mo", "1", "1", "1000sqft", "2121 Canyon Blvd, Boulder, CO 80302", "https://www.phillyaptrentals.com/wp-content/uploads/2020/12/apartment-building-what-makes-good-apartment-building-scaled.jpg",3.9,5);
+
+INSERT INTO Apartment
+VALUES(4, "Marine Appartments", "$2790/mo", "3", "1", "1200sqft", "1008 Marine Street, Boulder, CO 80302-6170", "https://s3-us-west-2.amazonaws.com/mktapts/images/bascom/139BDV/gallery/103tetu8v6eap6tsenq3dboon9tom47s.jpg",4.8,15);
+
+INSERT INTO Apartment
+VALUES(5, "Spanish Towers Apartments", "$3790/mo", "3", "2", "1500sqft", "805 29th Street, Boulder, CO 80302", "https://s3-us-west-2.amazonaws.com/mktapts/images/bascom/139BDV/gallery/8545cdd39f94eeea6bbef8aceca705a1.jpg",4.8,25);
+
+
+INSERT INTO Apartment
+VALUES(6, "Spanish Towers Apartments", "$3790/mo", "2", "1", "1000sqft", "805 29th Street, Boulder, CO 80302", "
+https://ktgy.com/wp-content/uploads/2015/11/Boulder-View-Apartments_00-1-920x684.jpg",4.5,25);
+
+INSERT INTO Apartment
+VALUES(7, "Spanish Towers Apartments", "$3790/mo", "1", "1", "900sqft", "805 29th Street, Boulder, CO 80302", "https://www.marketapts.com/images/apartments/photos/d56c08bfeb68749b9903adddd8a8c7a8.jpg",4.3,12);
+
+INSERT INTO Apartment
+VALUES(8, "2121 Canyon Apartments", "$2790/mo", "2", "1", "1800sqft", "2121 Canyon Blvd, Boulder, CO 80302", "https://images1.apartments.com/i2/kI02kaEDZ4ZNH24qA51cCPavb3FAnJKvbRks7RWmkPM/111/boulder-apartments-cheney-wa-primary.jpg",4.5,8);
+
+INSERT INTO Apartment
+VALUES(9, "2121 Canyon Apartments", "$1790/mo", "3", "2", "2300sqft", "2121 Canyon Blvd, Boulder, CO 80302", "https://res.cloudinary.com/apartmentlist/image/upload/c_fill,dpr_auto,f_auto,g_center,h_415,q_auto,w_640/jxke4pv0oygzhobrfx8p.jpg",4.9,5);
+
+INSERT INTO Apartment
+VALUES(10, "Gorgeous Remodel", "$1,675/mo", "1", "1", "800sqft", "1837 22nd Street, Boulder, CO 80302", "https://www.echelonrents.com/uploads/images/images/original/500549/4977_Moorhead_Ave_Boulder_CO-large-029-20-Courtyard-1500x1000-72dpi.jpg?1574808291", 4.2,14);
